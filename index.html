@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>लक्की श्रृंगार एवं जनरल स्टोर</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --rose: #e8426a;
+      --rose-light: #f7a8bc;
+      --rose-pale: #fde8ee;
+      --gold: #c9973a;
+      --gold-light: #f5d78e;
+      --gold-pale: #fdf6e3;
+      --teal: #1a7b6b;
+      --teal-light: #4dbfa8;
+      --cream: #fdf8f2;
+      --text-dark: #2d1a2e;
+      --text-mid: #5a3e5b;
+      --text-light: #9a7a9b;
+      --border: #f0d9e4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, #fff0f5 0%, #fdf6e3 50%, #f0faf8 100%);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid var(--border);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 360px; height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f7c5d5 0%, transparent 70%);
+      opacity: .5;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #d4f0e9 0%, transparent 70%);
+      opacity: .6;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text { flex: 1; }
+
+    .tagline-top {
+      display: inline-block;
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 600;
+      border: 1.5px solid var(--rose-light);
+      border-radius: 50px;
+      padding: 4px 16px;
+      margin-bottom: 18px;
+      background: #fff5f8;
+    }
+
+    .shop-name-hindi {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--rose);
+      text-shadow: 2px 3px 12px rgba(232,66,106,.15);
+      margin-bottom: 6px;
+    }
+
+    .shop-name-eng {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--teal);
+      font-style: italic;
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .tagline-bottom {
+      font-size: .9rem;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .18s, box-shadow .18s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+
+    .btn-rose {
+      background: linear-gradient(135deg, #e8426a, #c9305a);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(232,66,106,.35);
+    }
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #128C7E);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(37,211,102,.35);
+    }
+    .btn-map {
+      background: linear-gradient(135deg, #4A90D9, #1a65b0);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(74,144,217,.35);
+    }
+
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .hero-deco {
+      flex: 0 0 auto;
+      width: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-deco-circle {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f9dde8 30%, #fdf0d5 100%);
+      border: 3px solid var(--rose-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      box-shadow: 0 8px 40px rgba(232,66,106,.15);
+      animation: floatBob 4s ease-in-out infinite;
+    }
+
+    @keyframes floatBob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ─── LOCATION STRIP ─── */
+    .location-strip {
+      background: var(--teal);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .location-strip svg { width: 16px; height: 16px; }
+
+    /* ─── SECTION TITLES ─── */
+    .section { padding: 60px 24px; max-width: 1100px; margin: 0 auto; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .section-title span {
+      display: block;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: .95rem;
+      color: var(--rose);
+      font-weight: 600;
+    }
+    .title-line {
+      width: 60px; height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold));
+      border-radius: 4px;
+      margin: 12px auto 0;
+    }
+
+    /* ─── CATEGORIES ─── */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 18px;
+    }
+
+    .cat-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 24px 16px;
+      text-align: center;
+      border: 1.5px solid var(--border);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      cursor: default;
+    }
+    .cat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(232,66,106,.12);
+      border-color: var(--rose-light);
+    }
+    .cat-icon { font-size: 2.4rem; margin-bottom: 10px; }
+    .cat-name {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 2px;
+    }
+    .cat-name-eng { font-size: .72rem; color: var(--text-light); }
+
+    /* ─── PRODUCTS ─── */
+    .products-section { background: #fff5f8; }
+    .products-section .section { padding: 60px 24px; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+      transition: transform .22s, box-shadow .22s;
+      text-align: center;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(232,66,106,.13);
+      border-color: var(--rose-light);
+    }
+
+    .product-img {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      background: linear-gradient(135deg, #fde8ee, #fdf6e3);
+    }
+
+    .product-body { padding: 12px 10px; }
+    .product-name { font-size: .85rem; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
+    .product-name-hindi {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: .75rem;
+      color: var(--rose);
+      font-weight: 600;
+    }
+
+    /* ─── WHY US ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 22px;
+      border: 1.5px solid var(--border);
+      text-align: center;
+    }
+    .why-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .why-title { font-weight: 700; font-size: .95rem; color: var(--teal); margin-bottom: 6px; }
+    .why-desc { font-size: .8rem; color: var(--text-light); line-height: 1.6; }
+
+    /* ─── CONTACT ─── */
+    .contact-section {
+      background: linear-gradient(135deg, #fff0f5 0%, #f0faf8 100%);
+      border-top: 3px solid var(--border);
+      padding: 60px 24px;
+    }
+    .contact-cards {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .contact-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 22px;
+      text-align: center;
+      border: 1.5px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: transform .18s, box-shadow .18s;
+      display: block;
+    }
+    .contact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.1); }
+    .contact-card-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .contact-card-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; color: var(--text-dark); }
+    .contact-card-sub { font-size: .8rem; color: var(--text-light); }
+
+    .contact-card.rose-card { border-color: var(--rose-light); background: #fff8fa; }
+    .contact-card.green-card { border-color: #a5e6c8; background: #f2fff9; }
+    .contact-card.blue-card { border-color: #a5c8e6; background: #f2f8ff; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--text-dark);
+      color: #d4b8d5;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: .8rem;
+    }
+    footer strong { color: var(--rose-light); font-family: 'Noto Sans Devanagari', sans-serif; }
+    footer p { margin-top: 6px; opacity: .6; }
+
+    /* ─── FLOATING WHATSAPP ─── */
+    .float-wa {
+      position: fixed;
+      bottom: 28px; right: 24px;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #128C7E);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      text-decoration: none;
+      z-index: 999;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    .float-wa svg { width: 28px; height: 28px; fill: #fff; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.45); }
+      50% { box-shadow: 0 6px 36px rgba(37,211,102,.7); }
+    }
+
+    /* ─── SCROLL ANIMATE ─── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      .hero-deco { display: none; }
+      .hero-inner { flex-direction: column; text-align: center; }
+      .cta-row { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="tagline-top">✨ Grand Opening — स्वागत है आपका</div>
+      <h1 class="shop-name-hindi">लक्की श्रृंगार<br>एवं जनरल स्टोर</h1>
+      <p class="shop-name-eng">Lucky Shringar & General Store</p>
+      <p class="tagline-bottom">हमारी पहचान, आपकी पसंद — बेहतर क्वालिटी, उचित दाम</p>
+      <div class="cta-row">
+        <a href="tel:9006585388" class="btn btn-rose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/918797208299" target="_blank" class="btn btn-whatsapp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://maps.app.goo.gl/MGwQnvkN8Q7aEjpLA" target="_blank" class="btn btn-map">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Directions
+        </a>
+      </div>
+    </div>
+    <div class="hero-deco">
+      <div class="hero-deco-circle">💄</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOCATION STRIP ─── -->
+<div class="location-strip">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  📍 स्थान: उसरी &nbsp;|&nbsp; ☎ 9006585388 &nbsp;|&nbsp; 8797208299
+</div>
+
+<!-- ─── CATEGORIES ─── -->
+<div style="background: var(--cream);">
+  <div class="section">
+    <div class="section-title reveal">
+      <h2>Our Product Categories</h2>
+      <span>हमारी श्रेणियाँ</span>
+      <div class="title-line"></div>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card reveal"><div class="cat-icon">💄</div><div class="cat-name">कॉस्मेटिक्स</div><div class="cat-name-eng">Cosmetics</div></div>
+      <div class="cat-card reveal"><div class="cat-icon">📿</div><div class="cat-name">चूड़ियाँ</div><div class="cat-name-eng">Bangles</div></div>
+      <div class="cat-card reveal"><div class="cat-icon">💍</div><div class="cat-name">ज्वेलरी</div><div class="cat-name-eng">Jewellery</div></div>
+      <div class="cat-card reveal"><div class="cat-icon">🎀</div><div class="cat-name">हेयर एक्सेसरीज़</div><div class="cat-name-eng">Hair Accessories</div></div>
+      <div class="cat-card reveal"><div class="cat-icon">🪔</div><div class="cat-name">पूजा सामग्री</div><div class="cat-name-eng">Puja Items</div></div>
+      <div class="cat-card reveal"><div class="cat-icon">🧴</div><div class="cat-name">जनरल सामान</div><div class="cat-name-eng">General Store</div></div>
+      <div class="cat-card reveal"><div class="cat-icon">🎁</div><div class="cat-name">उपहार आइटम</div><div class="cat-name-eng">Gift Items</div></div>
+      <div class="cat-card reveal"><div class="cat-icon">🪡</div><div class="cat-name">धागा & सिलाई</div><div class="cat-name-eng">Thread & Sewing</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PRODUCTS ─── -->
+<div class="products-section">
+  <div class="section">
+    <div class="section-title reveal">
+      <h2>Popular Products</h2>
+      <span>लोकप्रिय उत्पाद</span>
+      <div class="title-line"></div>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card reveal">
+        <div class="product-img">💄</div>
+        <div class="product-body">
+          <div class="product-name">Lipstick</div>
+          <div class="product-name-hindi">लिपस्टिक</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">📿</div>
+        <div class="product-body">
+          <div class="product-name">Bangles</div>
+          <div class="product-name-hindi">चूड़ियाँ</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🎨</div>
+        <div class="product-body">
+          <div class="product-name">Makeup Kit</div>
+          <div class="product-name-hindi">मेकअप किट</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🧴</div>
+        <div class="product-body">
+          <div class="product-name">Face Wash</div>
+          <div class="product-name-hindi">फेस वॉश</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🪮</div>
+        <div class="product-body">
+          <div class="product-name">Comb</div>
+          <div class="product-name-hindi">कंघी</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">💍</div>
+        <div class="product-body">
+          <div class="product-name">Ring</div>
+          <div class="product-name-hindi">अंगूठी</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">📿</div>
+        <div class="product-body">
+          <div class="product-name">Haar (Necklace)</div>
+          <div class="product-name-hindi">हार</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🙏</div>
+        <div class="product-body">
+          <div class="product-name">Mangalsutra</div>
+          <div class="product-name-hindi">मंगलसूत्र</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🎀</div>
+        <div class="product-body">
+          <div class="product-name">Hair Clips</div>
+          <div class="product-name-hindi">हेयर क्लिप</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">👁️</div>
+        <div class="product-body">
+          <div class="product-name">Kajal & Eyeliner</div>
+          <div class="product-name-hindi">काजल / आईलाइनर</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">💅</div>
+        <div class="product-body">
+          <div class="product-name">Nail Polish</div>
+          <div class="product-name-hindi">नेल पॉलिश</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🌸</div>
+        <div class="product-body">
+          <div class="product-name">Mehendi</div>
+          <div class="product-name-hindi">मेहंदी</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">✨</div>
+        <div class="product-body">
+          <div class="product-name">Bindi</div>
+          <div class="product-name-hindi">बिंदी</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">💎</div>
+        <div class="product-body">
+          <div class="product-name">Earrings</div>
+          <div class="product-name-hindi">झुमके / बाली</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🪆</div>
+        <div class="product-body">
+          <div class="product-name">Sindoor</div>
+          <div class="product-name-hindi">सिंदूर</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🧼</div>
+        <div class="product-body">
+          <div class="product-name">Soap & Scrub</div>
+          <div class="product-name-hindi">साबुन / स्क्रब</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🌿</div>
+        <div class="product-body">
+          <div class="product-name">Hair Oil</div>
+          <div class="product-name-hindi">बाल तेल</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🧣</div>
+        <div class="product-body">
+          <div class="product-name">Scrunchie & Band</div>
+          <div class="product-name-hindi">स्क्रंची / बैंड</div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="product-card reveal">
+        <div class="product-img">🪡</div>
+        <div class="product-body">
+          <div class="product-name">Sewing Thread</div>
+          <div class="product-name-hindi">धागा</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🧳</div>
+        <div class="product-body">
+          <div class="product-name">Cosmetic Pouch</div>
+          <div class="product-name-hindi">कॉस्मेटिक पाउच</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🪞</div>
+        <div class="product-body">
+          <div class="product-name">Compact Mirror</div>
+          <div class="product-name-hindi">पॉकेट मिरर</div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">🏠</div>
+        <div class="product-body">
+          <div class="product-name">General Items</div>
+          <div class="product-name-hindi">जनरल सामान</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ─── WHY US ─── -->
+<div style="background: var(--cream);">
+  <div class="section">
+    <div class="section-title reveal">
+      <h2>Why Choose Us?</h2>
+      <span>हमें क्यों चुनें?</span>
+      <div class="title-line"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">✅</div>
+        <div class="why-title">Quality Guaranteed</div>
+        <div class="why-desc">सभी उत्पाद उच्च गुणवत्ता के होते हैं। We stock only trusted brands.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">💰</div>
+        <div class="why-title">Best Prices</div>
+        <div class="why-desc">उचित मूल्य पर सर्वोत्तम सामान। Fair prices for every budget.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🌟</div>
+        <div class="why-title">Wide Selection</div>
+        <div class="why-desc">Cosmetics, jewellery, bangles, puja items and much more under one roof.</div>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon">🤝</div>
+        <div class="why-title">Friendly Service</div>
+        <div class="why-desc">आपकी मुस्कान हमारी पहचान। Warm, helpful service always.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CONTACT ─── -->
+<div class="contact-section">
+  <div class="section-title reveal">
+    <h2>Get in Touch</h2>
+    <span>संपर्क करें</span>
+    <div class="title-line"></div>
+  </div>
+  <div class="contact-cards">
+    <a href="tel:9006585388" class="contact-card rose-card reveal">
+      <div class="contact-card-icon">📞</div>
+      <div class="contact-card-title">Call Us</div>
+      <div class="contact-card-sub">9006585388<br>8797208299</div>
+    </a>
+    <a href="https://wa.me/918797208299" target="_blank" class="contact-card green-card reveal">
+      <div class="contact-card-icon">💬</div>
+      <div class="contact-card-title">WhatsApp</div>
+      <div class="contact-card-sub">Chat with us anytime<br>+91 87972 08299</div>
+    </a>
+    <a href="https://maps.app.goo.gl/MGwQnvkN8Q7aEjpLA" target="_blank" class="contact-card blue-card reveal">
+      <div class="contact-card-icon">🗺️</div>
+      <div class="contact-card-title">Find Us</div>
+      <div class="contact-card-sub">स्थान — उसरी<br>Open Google Maps</div>
+    </a>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <strong>लक्की श्रृंगार एवं जनरल स्टोर</strong> — उसरी
+  <p>© 2025 Lucky Shringar & General Store. All rights reserved.</p>
+</footer>
+
+<!-- ─── FLOATING WHATSAPP ─── -->
+<a href="https://wa.me/918797208299" target="_blank" class="float-wa" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
